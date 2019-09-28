@@ -1,0 +1,7 @@
+C:\Users\szymi\source\repos\pro\Gma.UserActivityMonitor\bin\Debug\Gma.xml
+C:\Users\szymi\source\repos\pro\Gma.UserActivityMonitor\bin\Debug\Gma.UserActivityMonitor.dll
+C:\Users\szymi\source\repos\pro\Gma.UserActivityMonitor\bin\Debug\Gma.UserActivityMonitor.pdb
+C:\Users\szymi\source\repos\pro\Gma.UserActivityMonitor\obj\Debug\Gma.UserActivityMonitor.csprojAssemblyReference.cache
+C:\Users\szymi\source\repos\pro\Gma.UserActivityMonitor\obj\Debug\Gma.UserActivityMonitor.csproj.CoreCompileInputs.cache
+C:\Users\szymi\source\repos\pro\Gma.UserActivityMonitor\obj\Debug\Gma.UserActivityMonitor.dll
+C:\Users\szymi\source\repos\pro\Gma.UserActivityMonitor\obj\Debug\Gma.UserActivityMonitor.pdb

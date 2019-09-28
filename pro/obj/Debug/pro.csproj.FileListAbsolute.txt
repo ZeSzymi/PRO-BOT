@@ -1,0 +1,14 @@
+C:\Users\szymi\source\repos\pro\pro\bin\Debug\pro.exe.config
+C:\Users\szymi\source\repos\pro\pro\bin\Debug\pro.exe
+C:\Users\szymi\source\repos\pro\pro\bin\Debug\pro.pdb
+C:\Users\szymi\source\repos\pro\pro\obj\Debug\pro.csprojAssemblyReference.cache
+C:\Users\szymi\source\repos\pro\pro\obj\Debug\pro.Form1.resources
+C:\Users\szymi\source\repos\pro\pro\obj\Debug\pro.Properties.Resources.resources
+C:\Users\szymi\source\repos\pro\pro\obj\Debug\pro.csproj.GenerateResource.cache
+C:\Users\szymi\source\repos\pro\pro\obj\Debug\pro.csproj.CoreCompileInputs.cache
+C:\Users\szymi\source\repos\pro\pro\obj\Debug\pro.exe
+C:\Users\szymi\source\repos\pro\pro\obj\Debug\pro.pdb
+C:\Users\szymi\source\repos\pro\pro\bin\Debug\Newtonsoft.Json.dll
+C:\Users\szymi\source\repos\pro\pro\bin\Debug\Newtonsoft.Json.xml
+C:\Users\szymi\source\repos\pro\pro\obj\Debug\pro.csproj.CopyComplete
+C:\Users\szymi\source\repos\pro\pro\bin\Debug\Gma.System.MouseKeyHook.dll
