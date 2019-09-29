@@ -1,10 +1,8 @@
 ﻿using Gma.System.MouseKeyHook;
 using pro.models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,22 +17,25 @@ namespace pro
         private CheckPixelsHelper _checkPixelsHelper;
         private static bool counter = true;
         private bool go = true;
+        CancellationToken cancellationToken;
+        CancellationTokenSource _tokenSource;
         Task t1;
-        Task t2;
         public Form1()
         {
             InitializeComponent();
             _sendDataHelper = new SendDataHelper();
             m_GlobalHook = Hook.GlobalEvents();
             _data = new Data();
-            m_GlobalHook.KeyPress += GlobalHookKeyPress;
         }
 
         private void CatchPokemon()
         {
-            go = true;
             while (go)
             {
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    go = false;
+                }
                 counter = !counter;
                 if (go)
                     go = _checkPixelsHelper.Pokemon(_sendDataHelper, counter, _data);
@@ -43,9 +44,12 @@ namespace pro
 
         private void GetExpirience()
         {
-            go = true;
             while (go)
             {
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    go = false;
+                }
                 counter = !counter;
                 if (go)
                     go = _checkPixelsHelper.Exp(_sendDataHelper, counter, _data);
@@ -93,15 +97,6 @@ namespace pro
             MessageBox.Show("A: " + c.A + "R: " + c.R + "G: " + c.G + "B: " + c.B + "    " + cursor.X + " " + cursor.Y);
         }
 
-        private void GlobalHookKeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 'p')
-            {
-                go = false;
-                m_GlobalHook.KeyPress -= GlobalHookKeyPress;
-            }
-        }
-
         private void ExportBtn_Click(object sender, EventArgs e)
         {
             SetData();
@@ -117,22 +112,25 @@ namespace pro
 
         private void Start_Click(object sender, EventArgs e)
         {
-            m_GlobalHook.KeyPress += GlobalHookKeyPress;
+            StopBtn.Enabled = true;
             SetData();
             _checkPixelsHelper = new CheckPixelsHelper(_data);
-            t1 = new Task(CatchPokemon);
-            t1.Start();
-            t1.Wait();
+            go = true;
+
+            _tokenSource = new CancellationTokenSource();
+            cancellationToken = _tokenSource.Token;
+            t1 = Task.Run(CatchPokemon, cancellationToken);
         }
 
         private void ExpBtn_Click(object sender, EventArgs e)
         {
-            m_GlobalHook.KeyPress += GlobalHookKeyPress;
+            StopBtn.Enabled = true;
             SetData();
             _checkPixelsHelper = new CheckPixelsHelper(_data);
-            t1 = new Task(GetExpirience);
-            t1.Start();
-            t1.Wait();
+            go = true;
+            _tokenSource = new CancellationTokenSource();
+            cancellationToken = _tokenSource.Token;
+            t1 = Task.Run(GetExpirience, cancellationToken);
         }
 
         private Data SetData()
@@ -206,6 +204,16 @@ namespace pro
             PP2.Text = _data.PP2.ToString();
             PP3.Text = _data.PP3.ToString();
             PP4.Text = _data.PP4.ToString();
+        }
+
+        private void StopBtn_Click(object sender, EventArgs e)
+        {
+            StopBtn.Enabled = false;
+            go = false;
+            _tokenSource.Cancel();
+            t1.Wait();
+            t1.Dispose();
+            _tokenSource.Dispose();
         }
     }
 }

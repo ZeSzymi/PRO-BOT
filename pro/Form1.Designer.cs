@@ -101,6 +101,7 @@
             this.exportBtn = new System.Windows.Forms.Button();
             this.importBtn = new System.Windows.Forms.Button();
             this.importFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.StopBtn = new System.Windows.Forms.Button();
             this.PokemonBox.SuspendLayout();
             this.EvsBox.SuspendLayout();
             this.ExpBox.SuspendLayout();
@@ -759,11 +760,23 @@
             // 
             this.importFileDialog.FileName = "openFileDialog1";
             // 
+            // StopBtn
+            // 
+            this.StopBtn.Enabled = false;
+            this.StopBtn.Location = new System.Drawing.Point(168, 468);
+            this.StopBtn.Name = "StopBtn";
+            this.StopBtn.Size = new System.Drawing.Size(163, 51);
+            this.StopBtn.TabIndex = 31;
+            this.StopBtn.Text = "STOP";
+            this.StopBtn.UseVisualStyleBackColor = true;
+            this.StopBtn.Click += new System.EventHandler(this.StopBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 532);
+            this.Controls.Add(this.StopBtn);
             this.Controls.Add(this.importBtn);
             this.Controls.Add(this.exportBtn);
             this.Controls.Add(this.PP4);
@@ -872,6 +885,7 @@
         private System.Windows.Forms.Button exportBtn;
         private System.Windows.Forms.Button importBtn;
         private System.Windows.Forms.OpenFileDialog importFileDialog;
+        private System.Windows.Forms.Button StopBtn;
     }
 }
 

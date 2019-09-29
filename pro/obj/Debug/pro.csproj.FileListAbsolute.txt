@@ -12,3 +12,17 @@ C:\Users\szymi\source\repos\pro\pro\bin\Debug\Newtonsoft.Json.dll
 C:\Users\szymi\source\repos\pro\pro\bin\Debug\Newtonsoft.Json.xml
 C:\Users\szymi\source\repos\pro\pro\obj\Debug\pro.csproj.CopyComplete
 C:\Users\szymi\source\repos\pro\pro\bin\Debug\Gma.System.MouseKeyHook.dll
+D:\Projekty\proBot\pro\bin\Debug\pro.exe.config
+D:\Projekty\proBot\pro\bin\Debug\pro.exe
+D:\Projekty\proBot\pro\bin\Debug\pro.pdb
+D:\Projekty\proBot\pro\bin\Debug\Gma.System.MouseKeyHook.dll
+D:\Projekty\proBot\pro\bin\Debug\Newtonsoft.Json.dll
+D:\Projekty\proBot\pro\bin\Debug\Newtonsoft.Json.xml
+D:\Projekty\proBot\pro\obj\Debug\pro.csprojAssemblyReference.cache
+D:\Projekty\proBot\pro\obj\Debug\pro.Form1.resources
+D:\Projekty\proBot\pro\obj\Debug\pro.Properties.Resources.resources
+D:\Projekty\proBot\pro\obj\Debug\pro.csproj.GenerateResource.cache
+D:\Projekty\proBot\pro\obj\Debug\pro.csproj.CoreCompileInputs.cache
+D:\Projekty\proBot\pro\obj\Debug\pro.csproj.CopyComplete
+D:\Projekty\proBot\pro\obj\Debug\pro.exe
+D:\Projekty\proBot\pro\obj\Debug\pro.pdb
