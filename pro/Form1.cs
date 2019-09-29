@@ -76,15 +76,14 @@ namespace pro
             inX.Text = cursor.X.ToString();
             inY.Text = cursor.Y.ToString();
             m_GlobalHook.MouseDownExt -= GetPixels;
-            MessageBox.Show("A: " + c.A + "R: " + c.R + "G: " + c.G + "B: " + c.B + "    " + cursor.X + " " + cursor.Y);
         }
 
         private void Player_btn_Click(object sender, EventArgs e)
         {
-            m_GlobalHook.MouseDownExt += GlobalHookMouseDownExt;
+            m_GlobalHook.MouseDownExt += GetPlayerCoords;
         }
 
-        private void GlobalHookMouseDownExt(object sender, MouseEventExtArgs e)
+        public void GetPlayerCoords(object sender, MouseEventExtArgs e)
         {
             Point cursor = new Point();
 
@@ -92,9 +91,15 @@ namespace pro
 
             var c = _sendDataHelper.GetColorAt(cursor);
 
-            m_GlobalHook.MouseDownExt -= GlobalHookMouseDownExt;
+            this.BackColor = c;
+            PlayerA.Text = c.A.ToString();
+            PlayerB.Text = c.B.ToString();
+            PlayerR.Text = c.R.ToString();
+            PlayerG.Text = c.G.ToString();
+            PlayerX.Text = cursor.X.ToString();
+            PlayerY.Text = cursor.Y.ToString();
 
-            MessageBox.Show("A: " + c.A + "R: " + c.R + "G: " + c.G + "B: " + c.B + "    " + cursor.X + " " + cursor.Y);
+            m_GlobalHook.MouseDownExt -= GetPlayerCoords;
         }
 
         private void ExportBtn_Click(object sender, EventArgs e)
@@ -116,7 +121,6 @@ namespace pro
             SetData();
             _checkPixelsHelper = new CheckPixelsHelper(_data);
             go = true;
-
             _tokenSource = new CancellationTokenSource();
             cancellationToken = _tokenSource.Token;
             t1 = Task.Run(CatchPokemon, cancellationToken);
