@@ -104,8 +104,10 @@ namespace pro
 
         private void ExportBtn_Click(object sender, EventArgs e)
         {
+             
             SetData();
-            JsonHelper.Export(_data);
+            var path = saveFileDialog.ShowDialog();
+            JsonHelper.Export(_data, saveFileDialog.FileName);
         }
 
         private void ImportBtn_Click(object sender, EventArgs e)
@@ -171,6 +173,14 @@ namespace pro
             _data.PP2 = Int32.Parse(PP2.Text);
             _data.PP3 = Int32.Parse(PP3.Text);
             _data.PP4 = Int32.Parse(PP4.Text);
+            _data.FightA = Int32.Parse(FightA.Text);
+            _data.FightR = Int32.Parse(FightR.Text);
+            _data.FightG = Int32.Parse(FightG.Text);
+            _data.FightB = Int32.Parse(FightB.Text);
+            _data.FightX = Int32.Parse(FightX.Text);
+            _data.FightY = Int32.Parse(FightY.Text);
+            _data.Time1 = Int32.Parse(Time1.Text);
+            _data.Time2 = Int32.Parse(Time2.Text);
             return _data;
         }
 
@@ -208,6 +218,14 @@ namespace pro
             PP2.Text = _data.PP2.ToString();
             PP3.Text = _data.PP3.ToString();
             PP4.Text = _data.PP4.ToString();
+            FightA.Text = _data.FightA.ToString();
+            FightR.Text = _data.FightR.ToString();
+            FightG.Text = _data.FightG.ToString();
+            FightB.Text = _data.FightB.ToString();
+            FightX.Text = _data.FightX.ToString();
+            FightY.Text = _data.FightY.ToString();
+            Time1.Text = _data.Time1.ToString();
+            Time2.Text = _data.Time2.ToString();
         }
 
         private void StopBtn_Click(object sender, EventArgs e)

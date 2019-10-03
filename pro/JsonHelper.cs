@@ -8,11 +8,9 @@ namespace pro
 {
     public static class JsonHelper
     {
-        public static void Export(Data data)
+        public static void Export(Data data, string path)
         {
-            string path = @"d:\pro\" + "pro.json";
-            path = string.Join("", path.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
-         
+            path += ".json";
             try
             {
 

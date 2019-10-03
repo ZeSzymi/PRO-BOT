@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace pro.models
 {
     public class Data
@@ -40,6 +35,13 @@ namespace pro.models
         public int PP2 { get; set; }
         public int PP3 { get; set; }
         public int PP4 { get; set; }
-
+        public int FightR { get; set; }
+        public int FightG { get; set; }
+        public int FightB { get; set; }
+        public int FightA { get; set; }
+        public int FightX { get; set; }
+        public int FightY { get; set; }
+        public int Time1 { get; set; }
+        public int Time2 { get; set; }
     }
 }

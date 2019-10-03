@@ -102,16 +102,34 @@
             this.importBtn = new System.Windows.Forms.Button();
             this.importFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.StopBtn = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.FightR = new System.Windows.Forms.TextBox();
+            this.FightA = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.FightG = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.FightB = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.FightY = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.FightX = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.Time1 = new System.Windows.Forms.TextBox();
+            this.Time2 = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.PokemonBox.SuspendLayout();
             this.EvsBox.SuspendLayout();
             this.ExpBox.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_cursor
             // 
-            this.btn_cursor.Location = new System.Drawing.Point(426, 497);
+            this.btn_cursor.Location = new System.Drawing.Point(426, 549);
             this.btn_cursor.Name = "btn_cursor";
             this.btn_cursor.Size = new System.Drawing.Size(75, 23);
             this.btn_cursor.TabIndex = 0;
@@ -218,7 +236,7 @@
             // 
             // player_btn
             // 
-            this.player_btn.Location = new System.Drawing.Point(426, 468);
+            this.player_btn.Location = new System.Drawing.Point(426, 521);
             this.player_btn.Name = "player_btn";
             this.player_btn.Size = new System.Drawing.Size(75, 23);
             this.player_btn.TabIndex = 13;
@@ -228,7 +246,7 @@
             // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(12, 497);
+            this.start.Location = new System.Drawing.Point(12, 549);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(75, 23);
             this.start.TabIndex = 16;
@@ -238,7 +256,7 @@
             // 
             // EvsBtn
             // 
-            this.EvsBtn.Location = new System.Drawing.Point(12, 468);
+            this.EvsBtn.Location = new System.Drawing.Point(12, 520);
             this.EvsBtn.Name = "EvsBtn";
             this.EvsBtn.Size = new System.Drawing.Size(75, 23);
             this.EvsBtn.TabIndex = 17;
@@ -247,7 +265,7 @@
             // 
             // expBtn
             // 
-            this.expBtn.Location = new System.Drawing.Point(12, 439);
+            this.expBtn.Location = new System.Drawing.Point(12, 491);
             this.expBtn.Name = "expBtn";
             this.expBtn.Size = new System.Drawing.Size(75, 23);
             this.expBtn.TabIndex = 18;
@@ -637,7 +655,7 @@
             this.groupBox5.Controls.Add(this.label26);
             this.groupBox5.Controls.Add(this.label25);
             this.groupBox5.Controls.Add(this.Key1);
-            this.groupBox5.Location = new System.Drawing.Point(12, 329);
+            this.groupBox5.Location = new System.Drawing.Point(120, 429);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(275, 56);
             this.groupBox5.TabIndex = 23;
@@ -695,7 +713,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(11, 22);
+            this.label25.Location = new System.Drawing.Point(6, 22);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(13, 13);
             this.label25.TabIndex = 1;
@@ -703,42 +721,42 @@
             // 
             // Key1
             // 
-            this.Key1.Location = new System.Drawing.Point(30, 19);
+            this.Key1.Location = new System.Drawing.Point(25, 19);
             this.Key1.Name = "Key1";
             this.Key1.Size = new System.Drawing.Size(35, 20);
             this.Key1.TabIndex = 0;
             // 
             // PP1
             // 
-            this.PP1.Location = new System.Drawing.Point(42, 391);
+            this.PP1.Location = new System.Drawing.Point(145, 491);
             this.PP1.Name = "PP1";
             this.PP1.Size = new System.Drawing.Size(35, 20);
             this.PP1.TabIndex = 25;
             // 
             // PP2
             // 
-            this.PP2.Location = new System.Drawing.Point(104, 391);
+            this.PP2.Location = new System.Drawing.Point(212, 491);
             this.PP2.Name = "PP2";
             this.PP2.Size = new System.Drawing.Size(35, 20);
             this.PP2.TabIndex = 26;
             // 
             // PP3
             // 
-            this.PP3.Location = new System.Drawing.Point(168, 391);
+            this.PP3.Location = new System.Drawing.Point(276, 491);
             this.PP3.Name = "PP3";
             this.PP3.Size = new System.Drawing.Size(35, 20);
             this.PP3.TabIndex = 27;
             // 
             // PP4
             // 
-            this.PP4.Location = new System.Drawing.Point(229, 391);
+            this.PP4.Location = new System.Drawing.Point(337, 491);
             this.PP4.Name = "PP4";
             this.PP4.Size = new System.Drawing.Size(35, 20);
             this.PP4.TabIndex = 28;
             // 
             // exportBtn
             // 
-            this.exportBtn.Location = new System.Drawing.Point(426, 439);
+            this.exportBtn.Location = new System.Drawing.Point(426, 441);
             this.exportBtn.Name = "exportBtn";
             this.exportBtn.Size = new System.Drawing.Size(75, 23);
             this.exportBtn.TabIndex = 29;
@@ -748,7 +766,7 @@
             // 
             // importBtn
             // 
-            this.importBtn.Location = new System.Drawing.Point(426, 410);
+            this.importBtn.Location = new System.Drawing.Point(426, 418);
             this.importBtn.Name = "importBtn";
             this.importBtn.Size = new System.Drawing.Size(75, 23);
             this.importBtn.TabIndex = 30;
@@ -763,7 +781,7 @@
             // StopBtn
             // 
             this.StopBtn.Enabled = false;
-            this.StopBtn.Location = new System.Drawing.Point(168, 468);
+            this.StopBtn.Location = new System.Drawing.Point(168, 521);
             this.StopBtn.Name = "StopBtn";
             this.StopBtn.Size = new System.Drawing.Size(163, 51);
             this.StopBtn.TabIndex = 31;
@@ -771,11 +789,155 @@
             this.StopBtn.UseVisualStyleBackColor = true;
             this.StopBtn.Click += new System.EventHandler(this.StopBtn_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label29);
+            this.groupBox1.Controls.Add(this.FightR);
+            this.groupBox1.Controls.Add(this.FightA);
+            this.groupBox1.Controls.Add(this.label30);
+            this.groupBox1.Controls.Add(this.FightG);
+            this.groupBox1.Controls.Add(this.label31);
+            this.groupBox1.Controls.Add(this.FightB);
+            this.groupBox1.Controls.Add(this.label32);
+            this.groupBox1.Controls.Add(this.FightY);
+            this.groupBox1.Controls.Add(this.label33);
+            this.groupBox1.Controls.Add(this.FightX);
+            this.groupBox1.Controls.Add(this.label34);
+            this.groupBox1.Location = new System.Drawing.Point(12, 318);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(489, 64);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Fight";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(200, 27);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(14, 13);
+            this.label29.TabIndex = 6;
+            this.label29.Text = "A";
+            // 
+            // FightR
+            // 
+            this.FightR.Location = new System.Drawing.Point(27, 23);
+            this.FightR.Name = "FightR";
+            this.FightR.Size = new System.Drawing.Size(38, 20);
+            this.FightR.TabIndex = 2;
+            // 
+            // FightA
+            // 
+            this.FightA.Location = new System.Drawing.Point(217, 23);
+            this.FightA.Name = "FightA";
+            this.FightA.Size = new System.Drawing.Size(38, 20);
+            this.FightA.TabIndex = 1;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 26);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(15, 13);
+            this.label30.TabIndex = 7;
+            this.label30.Text = "R";
+            // 
+            // FightG
+            // 
+            this.FightG.Location = new System.Drawing.Point(92, 23);
+            this.FightG.Name = "FightG";
+            this.FightG.Size = new System.Drawing.Size(38, 20);
+            this.FightG.TabIndex = 3;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(71, 26);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(15, 13);
+            this.label31.TabIndex = 8;
+            this.label31.Text = "G";
+            // 
+            // FightB
+            // 
+            this.FightB.Location = new System.Drawing.Point(156, 23);
+            this.FightB.Name = "FightB";
+            this.FightB.Size = new System.Drawing.Size(38, 20);
+            this.FightB.TabIndex = 4;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(325, 27);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(14, 13);
+            this.label32.TabIndex = 11;
+            this.label32.Text = "Y";
+            // 
+            // FightY
+            // 
+            this.FightY.Location = new System.Drawing.Point(345, 24);
+            this.FightY.Name = "FightY";
+            this.FightY.Size = new System.Drawing.Size(38, 20);
+            this.FightY.TabIndex = 12;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(136, 26);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(14, 13);
+            this.label33.TabIndex = 9;
+            this.label33.Text = "B";
+            // 
+            // FightX
+            // 
+            this.FightX.Location = new System.Drawing.Point(281, 24);
+            this.FightX.Name = "FightX";
+            this.FightX.Size = new System.Drawing.Size(38, 20);
+            this.FightX.TabIndex = 5;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(261, 26);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(14, 13);
+            this.label34.TabIndex = 10;
+            this.label34.Text = "X";
+            // 
+            // Time1
+            // 
+            this.Time1.Location = new System.Drawing.Point(12, 404);
+            this.Time1.Name = "Time1";
+            this.Time1.Size = new System.Drawing.Size(35, 20);
+            this.Time1.TabIndex = 32;
+            // 
+            // Time2
+            // 
+            this.Time2.Location = new System.Drawing.Point(12, 441);
+            this.Time2.Name = "Time2";
+            this.Time2.Size = new System.Drawing.Size(35, 20);
+            this.Time2.TabIndex = 33;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(12, 388);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(30, 13);
+            this.label35.TabIndex = 34;
+            this.label35.Text = "Time";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 532);
+            this.ClientSize = new System.Drawing.Size(513, 584);
+            this.Controls.Add(this.label35);
+            this.Controls.Add(this.Time2);
+            this.Controls.Add(this.Time1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.StopBtn);
             this.Controls.Add(this.importBtn);
             this.Controls.Add(this.exportBtn);
@@ -805,6 +967,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -886,6 +1050,23 @@
         private System.Windows.Forms.Button importBtn;
         private System.Windows.Forms.OpenFileDialog importFileDialog;
         private System.Windows.Forms.Button StopBtn;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox FightR;
+        private System.Windows.Forms.TextBox FightA;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox FightG;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox FightB;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox FightY;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox FightX;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox Time1;
+        private System.Windows.Forms.TextBox Time2;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 

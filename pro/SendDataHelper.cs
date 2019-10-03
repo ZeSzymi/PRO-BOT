@@ -51,14 +51,14 @@ namespace pro
         [DllImport("user32.dll")]
         static extern bool PostMessage(IntPtr hWnd, UInt32 Msg, int wParam, int lParam);
 
-        public void SendKeyPressToProcess(int key)
+        public void SendKeyPressToProcess(int key, int time)
         {
             if (_process != null)
             {
                 IntPtr h = _process.MainWindowHandle;
                 SetForegroundWindow(h);
                 PostMessage(_process.MainWindowHandle, 0x0100, key, 0);
-                Thread.Sleep(1000);
+                Thread.Sleep(time);
                 SetForegroundWindow(Process.GetCurrentProcess().MainWindowHandle);
             }
         }
