@@ -15,6 +15,7 @@ namespace pro
     public class SendDataHelper
     {
         private Process _process;
+        private Process _mainProcess;
 
         [DllImport("user32.dll")]
         public static extern bool GetCursorPos(ref Point lpPoint);
@@ -27,6 +28,7 @@ namespace pro
         public SendDataHelper()
         {
             _process = Process.GetProcessesByName("PROclient").FirstOrDefault();
+            _mainProcess = Process.GetCurrentProcess();
         }
 
         public Color GetColorAt(Point location)
@@ -59,19 +61,19 @@ namespace pro
                 SetForegroundWindow(h);
                 PostMessage(_process.MainWindowHandle, 0x0100, key, 0);
                 Thread.Sleep(time);
-                SetForegroundWindow(Process.GetCurrentProcess().MainWindowHandle);
+                SetForegroundWindow(_mainProcess.MainWindowHandle);
             }
         }
 
-        public void SendKeyToQueue(string key)
+        public void SendKeyToQueue(string key, int time)
         {
             if (_process != null)
             {
                 IntPtr h = _process.MainWindowHandle;
                 SetForegroundWindow(h);
                 SendKeys.SendWait(key);
-                Thread.Sleep(1000);
-                SetForegroundWindow(Process.GetCurrentProcess().MainWindowHandle);
+                Thread.Sleep(time);
+                SetForegroundWindow(_mainProcess.MainWindowHandle);
             }
         }
 

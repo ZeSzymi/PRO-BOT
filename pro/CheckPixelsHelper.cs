@@ -34,15 +34,15 @@ namespace pro
                 {
                     case true:
                         sendDataHelper.SendKeyPressToProcess(0x41, data.Time1);
-                        break;
+                        return true;
                     case false:
                         sendDataHelper.SendKeyPressToProcess(0x44, data.Time1);
-                        break;
+                        return true;
                 }
             }
             else
             {
-                sendDataHelper.SendKeyToQueue(data.Key4);
+                sendDataHelper.SendKeyToQueue(data.Key4, data.Time1);
             }
             return true;
         }
@@ -55,45 +55,44 @@ namespace pro
                 {
                     case true:
                         sendDataHelper.SendKeyPressToProcess(0x41, data.Time1);
-                        break;
+                        return true;
                     case false:
                         sendDataHelper.SendKeyPressToProcess(0x44, data.Time1);
-                        break;
+                        return true;
                 }
             }
             else
             {
-                sendDataHelper.SendKeyToQueue(data.Key1);
-
                 if (sendDataHelper.checkPixels(data.FightA, data.FightR, data.FightG, data.FightB, data.FightX, data.FightY))
                 {
                     if (_pp1 > 0)
                     {
-                        sendDataHelper.SendKeyToQueue(data.Key1);
+                        sendDataHelper.SendKeyToQueue(data.Key1, data.Time1);
                         _pp1--;
                     }
                     else if (_pp2 > 0)
                     {
-                        sendDataHelper.SendKeyToQueue(data.Key2);
+                        sendDataHelper.SendKeyToQueue(data.Key2, data.Time1);
                         _pp2--;
                     }
                     else if (_pp3 > 0)
                     {
-                        sendDataHelper.SendKeyToQueue(data.Key3);
+                        sendDataHelper.SendKeyToQueue(data.Key3, data.Time1);
                         _pp3--;
                     }
                     else if (_pp4 > 0)
                     {
-                        sendDataHelper.SendKeyToQueue(data.Key4);
+                        sendDataHelper.SendKeyToQueue(data.Key4, data.Time1);
                         _pp4--;
                     }
                     else
                     {
                         return false;
                     }
+                } else
+                {
+                    sendDataHelper.SendKeyToQueue(data.Key1, data.Time1);
                 }
-                
-                Thread.Sleep(2000);
             }
             return true;
         }
@@ -106,44 +105,43 @@ namespace pro
                 {
                     case true:
                         sendDataHelper.SendKeyPressToProcess(0x41, data.Time1);
-                        break;
+                        return true;
                     case false:
                         sendDataHelper.SendKeyPressToProcess(0x44, data.Time1);
-                        break;
+                        return true;
                 }
             }
             else if (sendDataHelper.checkPixels(data.InA, data.InR, data.InG, data.InB, data.InX, data.InY) || 
                     sendDataHelper.checkPixels(data.EvA, data.EvR, data.EvG, data.EvB, data.EvX, data.EvY))
             {
-                sendDataHelper.SendKeyToQueue(data.Key1);
+                sendDataHelper.SendKeyToQueue(data.Key1, data.Time1);
                 if (sendDataHelper.checkPixels(data.FightA, data.FightR, data.FightG, data.FightB, data.FightX, data.FightY))
                 {
                     if (_pp1 > 0)
                     {
-                        sendDataHelper.SendKeyToQueue(data.Key1);
+                        sendDataHelper.SendKeyToQueue(data.Key1, data.Time1);
                         _pp1--;
                     }
                     else if (_pp2 > 0)
                     {
-                        sendDataHelper.SendKeyToQueue(data.Key2);
+                        sendDataHelper.SendKeyToQueue(data.Key2, data.Time1);
                         _pp2--;
                     }
                     else if (_pp3 > 0)
                     {
-                        sendDataHelper.SendKeyToQueue(data.Key3);
+                        sendDataHelper.SendKeyToQueue(data.Key3, data.Time1);
                         _pp3--;
                     }
                     else if (_pp4 > 0)
                     {
-                        sendDataHelper.SendKeyToQueue(data.Key4);
+                        sendDataHelper.SendKeyToQueue(data.Key4, data.Time1);
                         _pp4--;
                         return false;
                     }
                 }
-                Thread.Sleep(2000);
             } else
             {
-                sendDataHelper.SendKeyToQueue(data.Key4);
+                sendDataHelper.SendKeyToQueue(data.Key4, data.Time1);
             }
             return true;
         }

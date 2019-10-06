@@ -262,6 +262,7 @@
             this.EvsBtn.TabIndex = 17;
             this.EvsBtn.Text = "Evs";
             this.EvsBtn.UseVisualStyleBackColor = true;
+            this.EvsBtn.Click += new System.EventHandler(this.EvsBtn_Click);
             // 
             // expBtn
             // 

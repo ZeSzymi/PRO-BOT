@@ -44,6 +44,24 @@ namespace pro
 
         private void GetExpirience()
         {
+             while (go)
+             {
+                 if (cancellationToken.IsCancellationRequested)
+                 {
+                     go = false;
+                 }
+                 counter = !counter;
+                 if (go)
+                 {
+                    Thread.Sleep(_data.Time2);
+                    go = _checkPixelsHelper.Exp(_sendDataHelper, counter, _data);
+                 }
+                    
+             }
+        }
+
+        private void GetEvs()
+        {
             while (go)
             {
                 if (cancellationToken.IsCancellationRequested)
@@ -52,7 +70,10 @@ namespace pro
                 }
                 counter = !counter;
                 if (go)
-                    go = _checkPixelsHelper.Exp(_sendDataHelper, counter, _data);
+                {
+                    Thread.Sleep(_data.Time2);
+                    go = _checkPixelsHelper.Evs(_sendDataHelper, counter, _data);
+                }
             }
         }
 
@@ -104,7 +125,6 @@ namespace pro
 
         private void ExportBtn_Click(object sender, EventArgs e)
         {
-             
             SetData();
             var path = saveFileDialog.ShowDialog();
             JsonHelper.Export(_data, saveFileDialog.FileName);
@@ -137,6 +157,17 @@ namespace pro
             _tokenSource = new CancellationTokenSource();
             cancellationToken = _tokenSource.Token;
             t1 = Task.Run(GetExpirience, cancellationToken);
+        }
+
+        private void EvsBtn_Click(object sender, EventArgs e)
+        {
+            StopBtn.Enabled = true;
+            SetData();
+            _checkPixelsHelper = new CheckPixelsHelper(_data);
+            go = true;
+            _tokenSource = new CancellationTokenSource();
+            cancellationToken = _tokenSource.Token;
+            t1 = Task.Run(GetEvs, cancellationToken);
         }
 
         private Data SetData()
@@ -237,5 +268,6 @@ namespace pro
             t1.Dispose();
             _tokenSource.Dispose();
         }
+
     }
 }
