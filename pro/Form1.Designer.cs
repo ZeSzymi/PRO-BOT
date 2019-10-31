@@ -119,6 +119,12 @@
             this.Time2 = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.poke1checkBox = new System.Windows.Forms.CheckBox();
+            this.poke2checkBox = new System.Windows.Forms.CheckBox();
+            this.poke3checkBox = new System.Windows.Forms.CheckBox();
+            this.fightBtn = new System.Windows.Forms.Button();
+            this.poke2 = new System.Windows.Forms.Button();
+            this.poke3 = new System.Windows.Forms.Button();
             this.PokemonBox.SuspendLayout();
             this.EvsBox.SuspendLayout();
             this.ExpBox.SuspendLayout();
@@ -129,11 +135,11 @@
             // 
             // btn_cursor
             // 
-            this.btn_cursor.Location = new System.Drawing.Point(426, 549);
+            this.btn_cursor.Location = new System.Drawing.Point(426, 438);
             this.btn_cursor.Name = "btn_cursor";
             this.btn_cursor.Size = new System.Drawing.Size(75, 23);
             this.btn_cursor.TabIndex = 0;
-            this.btn_cursor.Text = "cursor";
+            this.btn_cursor.Text = "poke1";
             this.btn_cursor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_cursor.UseVisualStyleBackColor = true;
             this.btn_cursor.Click += new System.EventHandler(this.Btn_cursor_Click);
@@ -276,6 +282,7 @@
             // 
             // PokemonBox
             // 
+            this.PokemonBox.Controls.Add(this.poke1checkBox);
             this.PokemonBox.Controls.Add(this.label1);
             this.PokemonBox.Controls.Add(this.inR);
             this.PokemonBox.Controls.Add(this.inA);
@@ -293,10 +300,11 @@
             this.PokemonBox.Size = new System.Drawing.Size(489, 64);
             this.PokemonBox.TabIndex = 19;
             this.PokemonBox.TabStop = false;
-            this.PokemonBox.Text = "Pokemon";
+            this.PokemonBox.Text = "Poke1";
             // 
             // EvsBox
             // 
+            this.EvsBox.Controls.Add(this.poke2checkBox);
             this.EvsBox.Controls.Add(this.label7);
             this.EvsBox.Controls.Add(this.EvR);
             this.EvsBox.Controls.Add(this.EvA);
@@ -314,7 +322,7 @@
             this.EvsBox.Size = new System.Drawing.Size(489, 64);
             this.EvsBox.TabIndex = 20;
             this.EvsBox.TabStop = false;
-            this.EvsBox.Text = "Evs";
+            this.EvsBox.Text = "Poke2";
             // 
             // label7
             // 
@@ -414,6 +422,7 @@
             // 
             // ExpBox
             // 
+            this.ExpBox.Controls.Add(this.poke3checkBox);
             this.ExpBox.Controls.Add(this.label13);
             this.ExpBox.Controls.Add(this.ExpR);
             this.ExpBox.Controls.Add(this.ExpA);
@@ -431,7 +440,7 @@
             this.ExpBox.Size = new System.Drawing.Size(489, 64);
             this.ExpBox.TabIndex = 21;
             this.ExpBox.TabStop = false;
-            this.ExpBox.Text = "Exp";
+            this.ExpBox.Text = "Poke3";
             // 
             // label13
             // 
@@ -757,7 +766,7 @@
             // 
             // exportBtn
             // 
-            this.exportBtn.Location = new System.Drawing.Point(426, 441);
+            this.exportBtn.Location = new System.Drawing.Point(426, 401);
             this.exportBtn.Name = "exportBtn";
             this.exportBtn.Size = new System.Drawing.Size(75, 23);
             this.exportBtn.TabIndex = 29;
@@ -767,7 +776,7 @@
             // 
             // importBtn
             // 
-            this.importBtn.Location = new System.Drawing.Point(426, 418);
+            this.importBtn.Location = new System.Drawing.Point(426, 378);
             this.importBtn.Name = "importBtn";
             this.importBtn.Size = new System.Drawing.Size(75, 23);
             this.importBtn.TabIndex = 30;
@@ -930,11 +939,74 @@
             this.label35.TabIndex = 34;
             this.label35.Text = "Time";
             // 
+            // poke1checkBox
+            // 
+            this.poke1checkBox.AutoSize = true;
+            this.poke1checkBox.Location = new System.Drawing.Point(437, 25);
+            this.poke1checkBox.Name = "poke1checkBox";
+            this.poke1checkBox.Size = new System.Drawing.Size(15, 14);
+            this.poke1checkBox.TabIndex = 13;
+            this.poke1checkBox.UseVisualStyleBackColor = true;
+            this.poke1checkBox.CheckedChanged += new System.EventHandler(this.Poke1checkBox_CheckedChanged);
+            // 
+            // poke2checkBox
+            // 
+            this.poke2checkBox.AutoSize = true;
+            this.poke2checkBox.Location = new System.Drawing.Point(437, 26);
+            this.poke2checkBox.Name = "poke2checkBox";
+            this.poke2checkBox.Size = new System.Drawing.Size(15, 14);
+            this.poke2checkBox.TabIndex = 14;
+            this.poke2checkBox.UseVisualStyleBackColor = true;
+            // 
+            // poke3checkBox
+            // 
+            this.poke3checkBox.AutoSize = true;
+            this.poke3checkBox.Location = new System.Drawing.Point(437, 25);
+            this.poke3checkBox.Name = "poke3checkBox";
+            this.poke3checkBox.Size = new System.Drawing.Size(15, 14);
+            this.poke3checkBox.TabIndex = 14;
+            this.poke3checkBox.UseVisualStyleBackColor = true;
+            // 
+            // fightBtn
+            // 
+            this.fightBtn.Location = new System.Drawing.Point(426, 549);
+            this.fightBtn.Name = "fightBtn";
+            this.fightBtn.Size = new System.Drawing.Size(75, 23);
+            this.fightBtn.TabIndex = 35;
+            this.fightBtn.Text = "fight cursor";
+            this.fightBtn.UseVisualStyleBackColor = true;
+            this.fightBtn.Click += new System.EventHandler(this.FightBtn_Click);
+            // 
+            // poke2
+            // 
+            this.poke2.Location = new System.Drawing.Point(426, 462);
+            this.poke2.Name = "poke2";
+            this.poke2.Size = new System.Drawing.Size(75, 23);
+            this.poke2.TabIndex = 36;
+            this.poke2.Text = "poke2";
+            this.poke2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.poke2.UseVisualStyleBackColor = true;
+            this.poke2.Click += new System.EventHandler(this.Poke2_Click);
+            // 
+            // poke3
+            // 
+            this.poke3.Location = new System.Drawing.Point(426, 488);
+            this.poke3.Name = "poke3";
+            this.poke3.Size = new System.Drawing.Size(75, 23);
+            this.poke3.TabIndex = 37;
+            this.poke3.Text = "poke3";
+            this.poke3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.poke3.UseVisualStyleBackColor = true;
+            this.poke3.Click += new System.EventHandler(this.Poke3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 584);
+            this.Controls.Add(this.poke3);
+            this.Controls.Add(this.poke2);
+            this.Controls.Add(this.fightBtn);
             this.Controls.Add(this.label35);
             this.Controls.Add(this.Time2);
             this.Controls.Add(this.Time1);
@@ -1068,6 +1140,12 @@
         private System.Windows.Forms.TextBox Time2;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.CheckBox poke1checkBox;
+        private System.Windows.Forms.CheckBox poke2checkBox;
+        private System.Windows.Forms.CheckBox poke3checkBox;
+        private System.Windows.Forms.Button fightBtn;
+        private System.Windows.Forms.Button poke2;
+        private System.Windows.Forms.Button poke3;
     }
 }
 

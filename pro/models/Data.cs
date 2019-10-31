@@ -43,5 +43,8 @@ namespace pro.models
         public int FightY { get; set; }
         public int Time1 { get; set; }
         public int Time2 { get; set; }
+        public bool poke1 { get; set; }
+        public bool poke2 { get; set; }
+        public bool poke3 { get; set; }
     }
 }

@@ -84,7 +84,7 @@ namespace pro
 
         private void GetPixels(object sender, EventArgs e)
         {
-            Point cursor = new Point();
+            System.Drawing.Point cursor = new System.Drawing.Point();
 
             SendDataHelper.GetCursorPos(ref cursor);
 
@@ -106,7 +106,7 @@ namespace pro
 
         public void GetPlayerCoords(object sender, MouseEventExtArgs e)
         {
-            Point cursor = new Point();
+            System.Drawing.Point cursor = new System.Drawing.Point();
 
             SendDataHelper.GetCursorPos(ref cursor);
 
@@ -121,6 +121,78 @@ namespace pro
             PlayerY.Text = cursor.Y.ToString();
 
             m_GlobalHook.MouseDownExt -= GetPlayerCoords;
+        }
+
+        private void Poke2_Click(object sender, EventArgs e)
+        {
+            m_GlobalHook.MouseDownExt += GetPoke2Coords;
+        }
+
+        public void GetPoke2Coords(object sender, MouseEventExtArgs e)
+        {
+            System.Drawing.Point cursor = new System.Drawing.Point();
+
+            SendDataHelper.GetCursorPos(ref cursor);
+
+            var c = _sendDataHelper.GetColorAt(cursor);
+
+            this.BackColor = c;
+            EvA.Text = c.A.ToString();
+            EvB.Text = c.B.ToString();
+            EvR.Text = c.R.ToString();
+            EvG.Text = c.G.ToString();
+            EvX.Text = cursor.X.ToString();
+            EvY.Text = cursor.Y.ToString();
+
+            m_GlobalHook.MouseDownExt -= GetPoke2Coords;
+        }
+
+        private void Poke3_Click(object sender, EventArgs e)
+        {
+            m_GlobalHook.MouseDownExt += GetPoke3Coords;
+        }
+
+        public void GetPoke3Coords(object sender, MouseEventExtArgs e)
+        {
+            System.Drawing.Point cursor = new System.Drawing.Point();
+
+            SendDataHelper.GetCursorPos(ref cursor);
+
+            var c = _sendDataHelper.GetColorAt(cursor);
+
+            this.BackColor = c;
+            ExpA.Text = c.A.ToString();
+            ExpB.Text = c.B.ToString();
+            ExpR.Text = c.R.ToString();
+            ExpG.Text = c.G.ToString();
+            ExpX.Text = cursor.X.ToString();
+            ExpY.Text = cursor.Y.ToString();
+
+            m_GlobalHook.MouseDownExt -= GetPoke3Coords;
+        }
+
+        private void FightBtn_Click(object sender, EventArgs e)
+        {
+            m_GlobalHook.MouseDownExt += GetFightCoords;
+        }
+
+        public void GetFightCoords(object sender, MouseEventExtArgs e)
+        {
+            System.Drawing.Point cursor = new System.Drawing.Point();
+
+            SendDataHelper.GetCursorPos(ref cursor);
+
+            var c = _sendDataHelper.GetColorAt(cursor);
+
+            this.BackColor = c;
+            FightA.Text = c.A.ToString();
+            FightB.Text = c.B.ToString();
+            FightR.Text = c.R.ToString();
+            FightG.Text = c.G.ToString();
+            FightX.Text = cursor.X.ToString();
+            FightY.Text = cursor.Y.ToString();
+
+            m_GlobalHook.MouseDownExt -= GetFightCoords;
         }
 
         private void ExportBtn_Click(object sender, EventArgs e)
@@ -212,6 +284,9 @@ namespace pro
             _data.FightY = Int32.Parse(FightY.Text);
             _data.Time1 = Int32.Parse(Time1.Text);
             _data.Time2 = Int32.Parse(Time2.Text);
+            _data.poke1 = poke1checkBox.Checked;
+            _data.poke2 = poke2checkBox.Checked;
+            _data.poke3 = poke3checkBox.Checked;
             return _data;
         }
 
@@ -257,6 +332,9 @@ namespace pro
             FightY.Text = _data.FightY.ToString();
             Time1.Text = _data.Time1.ToString();
             Time2.Text = _data.Time2.ToString();
+            poke1checkBox.Checked = _data.poke1;
+            poke2checkBox.Checked = _data.poke2;
+            poke3checkBox.Checked = _data.poke3;
         }
 
         private void StopBtn_Click(object sender, EventArgs e)
@@ -269,5 +347,9 @@ namespace pro
             _tokenSource.Dispose();
         }
 
+        private void Poke1checkBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

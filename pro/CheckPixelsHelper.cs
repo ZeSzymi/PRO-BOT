@@ -1,10 +1,5 @@
 ﻿using pro.models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace pro
 {
@@ -14,17 +9,38 @@ namespace pro
         private int _pp2;
         private int _pp3;
         private int _pp4;
+        private List<Point> _points = new List<Point>();
         public CheckPixelsHelper(Data data)
         {
             _pp1 = data.PP1;
             _pp2 = data.PP2;
             _pp3 = data.PP3;
             _pp4 = data.PP4;
+
+            if (data.poke1)
+                _points.Add(new Point { R = data.InR, G = data.InG, B = data.InB, A = data.InA, X = data.InX, Y = data.InY });
+            if (data.poke2)
+                _points.Add(new Point { R = data.EvR, G = data.EvG, B = data.EvB, A = data.EvA, X = data.EvX, Y = data.EvY });
+            if (data.poke3)
+                _points.Add(new Point { R = data.ExpR, G = data.ExpG, B = data.ExpB, A = data.ExpA, X = data.ExpX, Y = data.ExpY });
+        }
+
+        private bool CheckPixelsForArr(SendDataHelper sendDataHelper, List<Point> points)
+        {
+            foreach (var point in points)
+            {
+                if (sendDataHelper.checkPixels(point.A, point.R, point.G, point.B, point.X, point.Y))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public bool Pokemon(SendDataHelper sendDataHelper, bool counter, Data data)
         {
-            if (sendDataHelper.checkPixels(data.InA, data.InR, data.InG, data.InB, data.InX, data.InY))
+            if (CheckPixelsForArr(sendDataHelper, _points))
             {
                 return false;
             }
@@ -111,8 +127,7 @@ namespace pro
                         return true;
                 }
             }
-            else if (sendDataHelper.checkPixels(data.InA, data.InR, data.InG, data.InB, data.InX, data.InY) || 
-                    sendDataHelper.checkPixels(data.EvA, data.EvR, data.EvG, data.EvB, data.EvX, data.EvY))
+            else if (CheckPixelsForArr(sendDataHelper, _points))
             {
                 sendDataHelper.SendKeyToQueue(data.Key1, data.Time1);
                 if (sendDataHelper.checkPixels(data.FightA, data.FightR, data.FightG, data.FightB, data.FightX, data.FightY))
